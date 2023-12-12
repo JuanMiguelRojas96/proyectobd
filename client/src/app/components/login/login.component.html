@@ -9,6 +9,7 @@
 
     <!-- Login Form -->
     <form>
+      <h5 class="text-center">INICIAR SESÓN</h5>
       <input type="email" id="login" class="fadeIn second" name="login" placeholder="Correo Electrónico" required>
       <input type="password" id="password" class="fadeIn third" name="login" placeholder="Contraseña" required>
       <input type="submit" class="fadeIn fourth" value="Log In">
@@ -16,7 +17,7 @@
 
     <!-- Remind Passowrd -->
     <div id="formFooter">
-      <a class="underlineHover" href="#">Forgot Password?</a>
+      <a class="underlineHover" [routerLink]="['/register']">Registrarme</a>
     </div>
 
   </div>

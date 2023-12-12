@@ -1,0 +1,26 @@
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+
+    <!-- Icon -->
+    <div class="fadeIn first">
+      <img src="../../../assets/login.png" id="icon" alt="User Icon" />
+    </div>
+
+    <!-- Login Form -->
+    <form>
+      <h5 class="text-center">REGISTRO</h5>
+      <input type="text" id="email" class="fadeIn second" name="register" placeholder="Correo Electrónico" required>
+      <input type="text" id="nombre" class="fadeIn third" name="register" placeholder="Nombre" required>
+      <input type="text" id="telefono" class="fadeIn third" name="register" placeholder="Teléfono" required>
+      <input type="password" id="password" class="fadeIn third" name="register" placeholder="Contraseña" required>
+      <input type="submit" class="fadeIn fourth" value="Registrarme">
+    </form>
+
+    <!-- Remind Passowrd -->
+    <div id="formFooter">
+      <a class="underlineHover" [routerLink]="['/login']">Ya tengo una cuenta</a>
+    </div>
+
+  </div>
+</div>
