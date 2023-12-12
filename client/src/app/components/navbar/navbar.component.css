@@ -28,6 +28,9 @@ div{
 .nav-link:hover{
   color: yellow;
 }
+.active{
+  color:#0BC829F0;
+}
 .navbar-nav{
   margin-left: auto;
   height: 100%;
