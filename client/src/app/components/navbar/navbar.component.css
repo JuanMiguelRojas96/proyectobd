@@ -4,6 +4,7 @@ div{
 .navbar{
   background-image: linear-gradient(to right, #0BC829F0, #1F51B2ED);
   font-family:'Poppins',sans-serif;
+  width: auto;
 
 }
 

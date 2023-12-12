@@ -1,8 +1,9 @@
 
 .footer {
   background-color: #333;
-  bottom: 0;
-  width: 100%;
+  position: absolute;
+  width: 101%;
+  z-index: 1;
 }
 .nav-link{
   color: white;
