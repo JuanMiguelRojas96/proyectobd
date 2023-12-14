@@ -14,6 +14,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { CardCityComponent } from './components/card-city/card-city.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
+import { MoviesComponent } from './components/movies/movies.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { RegisterComponent } from './components/register/register.component';
     FooterComponent,
     CardCityComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    MoviesComponent
   ],
   imports: [
     BrowserModule,

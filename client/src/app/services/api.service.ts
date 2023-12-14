@@ -10,5 +10,8 @@ export class ApiService {
   obtenerCiudades() {
     return this.http.get('http://localhost:3001/cinefilos/city');
   }
+  obtenerPeliculas(){
+    return this.http.get('http://localhost:3001/cinefilos/movie');
+  }
 
 }
