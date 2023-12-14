@@ -6,8 +6,8 @@ module.exports = (sequelize) => {
   sequelize.define('Client', {
     id: {
       type: DataTypes.INTEGER,
-      autoIncrement: false,
-      allowNull: false,
+      autoIncrement: true,
+      allowNull: true,
       primaryKey: true,
     },
     password: {
