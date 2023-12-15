@@ -17,6 +17,8 @@ module.exports = (sequelize) => {
     ticketSold: {
       type: DataTypes.INTEGER,
       allowNull: false,
+      defaultValue: 0,
     }
   },{ frezeeTableName: true, timestamps: false });
 };
+
