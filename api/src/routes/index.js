@@ -8,6 +8,9 @@ const postMovie = require("../controllers/postMovies");
 const getAllMovies = require("../controllers/getMovies");
 const postFunction = require("../controllers/postFunction");
 const getFunction = require("../controllers/getFunction");
+const postBranch = require('../controllers/postBranch');
+const getBranch = require('../controllers/getBranch');
+const login = require('../controllers/login');
 // Importar todos los routers;
 // Ejemplo: const authRouter = require('./auth.js');
 
@@ -27,11 +30,20 @@ router.get('/cinefilos/client/:id?',getClient);
 //ruta para añadir un cliente
 router.post('/cinefilos/client',postClient);
 
+//ruta para login
+router.get('/cinefilos/login',login);
+
 //ruta para añadir una pelicula
 router.post('/cinefilos/movie', postMovie);
 
 //ruta para traer todas las peliculas
 router.get('/cinefilos/movie',getAllMovies);
+
+//ruta para añadir una sucursal
+router.post('/cinefilos/branch', postBranch);
+
+//ruta para traer todas las sucursales
+router.get('/cinefilos/branch/:id?', getBranch);
 
 //ruta para añadir una función
 router.post('/cinefilos/function', postFunction);

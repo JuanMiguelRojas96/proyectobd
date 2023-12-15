@@ -24,3 +24,4 @@ module.exports = (sequelize) => {
     },
   },{ frezeeTableName: true, timestamps: false });
 };
+
