@@ -5,6 +5,7 @@ div{
   background-image: linear-gradient(to right, #0BC829F0, #1F51B2ED);
   font-family:'Poppins',sans-serif;
   width: auto;
+  height: auto;
 
 }
 
@@ -51,3 +52,11 @@ li{
   width: 23px;
 }
 
+.login{
+  margin-top: 10px;
+}
+
+img{
+  width: 50px;
+  margin-bottom: 10px;
+}

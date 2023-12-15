@@ -21,7 +21,7 @@
   </button>
 </div>
 
-<h2 class="text-center m-5 animated fadeIn">CARTELERA</h2>
+<h2 class="text-center m-5 animated fadeIn">CARTELERA <span class="selectedCity"> {{selectedCity|uppercase}} </span></h2>
 
 <div class="row row-cols-1 row-cols-md-3 g-4 container-fluid p-5" data-masonry='{"percentPosition": true }'>
   <div *ngFor="let pelicula of peliculas, let i = index" class="col animated fadeIn fast">

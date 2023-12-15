@@ -27,3 +27,7 @@
     transform: translateY(0);
   }
 }
+
+.selectedCity{
+  color: #0BC829F0;
+}

@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output,EventEmitter } from '@angular/core';
 import { ApiService } from '../../services/api.service';
+import { CiudadService } from '../../services/ciudad.service';
 
 @Component({
   selector: 'app-card-city',
@@ -10,7 +11,9 @@ export class CardCityComponent implements OnInit{
 
   ciudades: any; // Variable para almacenar los datos de las ciudades
 
-  constructor(private apiService: ApiService) {}
+  constructor(private apiService: ApiService, private ciudadService:CiudadService) {}
+
+  @Output() ciudadSeleccionada = new EventEmitter<string>();
 
   ngOnInit() {
     this.obtenerCiudades();
@@ -19,6 +22,11 @@ export class CardCityComponent implements OnInit{
     this.apiService.obtenerCiudades().subscribe((data: any) => {
       this.ciudades = data; // Almacena los datos de las ciudades en la variable 'ciudades'
     });
+  }
+
+  seleccionarCiudad(ciudadSeleccionada:string){
+    this.ciudadService.setCity(ciudadSeleccionada);
+    console.log(ciudadSeleccionada);
   }
 
 }
