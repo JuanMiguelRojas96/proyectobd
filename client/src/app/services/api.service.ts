@@ -22,4 +22,8 @@ export class ApiService {
       map(movies => movies.find(movie => movie.id === id))
     );
   }
+
+  registrarCliente(datosCliente: any) :Observable<any> {
+    return this.http.post<any>('http://localhost:3001/cinefilos/client',datosCliente);
+  }
 }
