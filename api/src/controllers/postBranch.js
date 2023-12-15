@@ -2,11 +2,9 @@ const { Branch, City } = require('../db');
 
 const postBranch = async (req, res) => {
     try {
-        const { id, name, adress, phone, city } = req.body;
-        
+        const { id, name, adress, phone, city } = req.body;     
         //Se busca la ciudad en la base de datos
         const branchCity = await City.findOne({ where: { name: city } });
-        console.log(branchCity)
         //Se crea la sucursal
         const newBranch = await Branch.create({ id, name, adress, phone });
         //Se asigna la sucursal a la ciudad

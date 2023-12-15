@@ -11,6 +11,8 @@ const getFunction = require("../controllers/getFunction");
 const postBranch = require('../controllers/postBranch');
 const getBranch = require('../controllers/getBranch');
 const login = require('../controllers/login');
+const postRoom = require('../controllers/postRoom');
+const getRoom = require('../controllers/getRoom');
 // Importar todos los routers;
 // Ejemplo: const authRouter = require('./auth.js');
 
@@ -44,6 +46,12 @@ router.post('/cinefilos/branch', postBranch);
 
 //ruta para traer todas las sucursales
 router.get('/cinefilos/branch/:id?', getBranch);
+
+//ruta para crear la sala
+router.post('/cinefilos/room', postRoom);
+
+//ruta para traer todas las salas
+router.get('/cinefilos/room/:id?', getRoom);
 
 //ruta para añadir una función
 router.post('/cinefilos/function', postFunction);
