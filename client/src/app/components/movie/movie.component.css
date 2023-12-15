@@ -1,0 +1,10 @@
+.synopsis{
+  border: 1px solid black;
+  padding: 12px 12px;
+  margin-bottom:50px;
+
+}
+img{
+  margin: auto;
+  max-width: 100%;
+}

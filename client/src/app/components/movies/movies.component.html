@@ -1,14 +1,14 @@
 <div id="carouselExampleInterval" class="carousel slide animated fadeIn fast" data-bs-ride="carousel">
   <div class="carousel-indicators">
-    <button *ngFor="let pelicula of peliculas, let i = index" type="button" data-bs-target="#carouselExampleInterval" [attr.data-bs-target]="'#carouselExampleInterval'" 
-    [attr.data-bs-slide-to]="i" 
-    [class.active]="i === 0" 
-    aria-current="true" 
+    <button *ngFor="let pelicula of peliculas, let i = index" type="button" data-bs-target="#carouselExampleInterval" [attr.data-bs-target]="'#carouselExampleInterval'"
+    [attr.data-bs-slide-to]="i"
+    [class.active]="i === 0"
+    aria-current="true"
     [attr.aria-label]="'Slide ' + (i + 1)"></button>
   </div>
-  <div class="carousel-inner">
+  <div class="carousel-inner container-fluid">
     <div *ngFor="let pelicula of peliculas, let i = index" [ngClass]="{'carousel-item': true, 'active': i === 0, 'animated': true, 'fadeIn': true}" data-bs-interval="5000">
-      <img src="{{pelicula.image}}" class="d-block w-100 img-carousel" alt="{{pelicula.id}}">
+      <img src="{{pelicula.image}}" class="d-block w-100 img-carousel img-fluid" alt="{{pelicula.id}}">
     </div>
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
@@ -21,20 +21,20 @@
   </button>
 </div>
 
-<h2 class="text-center m-5">CARTELERA</h2>
+<h2 class="text-center m-5 animated fadeIn">CARTELERA</h2>
 
 <div class="row row-cols-1 row-cols-md-3 g-4 container-fluid p-5" data-masonry='{"percentPosition": true }'>
   <div *ngFor="let pelicula of peliculas, let i = index" class="col animated fadeIn fast">
-    <div class="card img-card">
+    <div class="card img-card container-fluid">
       <img class="card-img-top img-fluid " title={{pelicula.name}} src="{{pelicula.image}}" class="card-img-top" [alt]="pelicula.id">
       <div class="card-body">
         <h5 class="card-title">{{pelicula.name}}</h5>
         <p class="card-text">{{pelicula.synopsis}}</p>
-       
-        <!-- <a [routerLink]="['/heroe',heroe.nombre]" class="btn btn-outline-primary w-100">Ver más link...</a> -->
+
+        <a [routerLink]="['/movie',pelicula.id]" class="btn btn-outline-success w-100">Ver más...</a>
       </div>
       <div class="card-footer">
-        <small class="text-body-secondary">`{{pelicula.duration}} Minutos`</small>
+        <small class="text-body-secondary">{{pelicula.duration}} Minutos</small>
       </div>
     </div>
   </div>

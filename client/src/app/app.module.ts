@@ -15,6 +15,7 @@ import { CardCityComponent } from './components/card-city/card-city.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { MoviesComponent } from './components/movies/movies.component';
+import { MovieComponent } from './components/movie/movie.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { MoviesComponent } from './components/movies/movies.component';
     CardCityComponent,
     LoginComponent,
     RegisterComponent,
-    MoviesComponent
+    MoviesComponent,
+    MovieComponent
   ],
   imports: [
     BrowserModule,
