@@ -13,14 +13,14 @@ const login = async (req, res) => {
         if (getCLient.password !== password) {
             return res.status(200).json({ token: false});
         }
-        const data = {
-            id: getCLient.id,
-            name: getCLient.name,
-            email: getCLient.email
-        }
+        
         return res.status(200).json({ 
             token: true,
-            clientData: JSON.stringify(data)
+            clientData: {
+                id: getCLient.id,
+                name: getCLient.name,
+                email: getCLient.email
+            }
         });
 
     } catch (error) {
