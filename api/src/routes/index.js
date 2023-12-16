@@ -13,6 +13,8 @@ const getBranch = require('../controllers/getBranch');
 const login = require('../controllers/login');
 const postRoom = require('../controllers/postRoom');
 const getRoom = require('../controllers/getRoom');
+const postTypeChair = require('../controllers/postTypeChair');
+const postChair = require('../controllers/postChair');
 // Importar todos los routers;
 // Ejemplo: const authRouter = require('./auth.js');
 
@@ -58,5 +60,11 @@ router.post('/cinefilos/function', postFunction);
 
 //ruta para traer todos las funciones o una en particular
 router.get('/cinefilos/function/:id?', getFunction);
+
+//ruta para añadir un tipo de silla
+router.post('/cinefilos/type', postTypeChair);
+
+//ruta para añadir una silla
+router.post('/cinefilos/chair', postChair);
 
 module.exports = router;
