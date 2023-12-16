@@ -13,3 +13,8 @@
 .card-bg{
   background-color:#D9D9D9E5 ;
 }
+
+.dropdown-item:hover{
+  background-color:#1F51B2ED ;
+  color: white;
+}

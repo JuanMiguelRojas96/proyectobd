@@ -1,17 +1,19 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, BehaviorSubject} from 'rxjs';
 import { map } from 'rxjs/operators';
 import { CookieService } from 'ngx-cookie-service';
-import { Token } from '@angular/compiler';
+import { Router } from '@angular/router';
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
+  isLoggedIn$ = new BehaviorSubject<boolean>(this.isLoggedIn()); // Inicializar con el estado actual
+  clientData$ = new BehaviorSubject<any>(this.getClientData());
 
-  constructor(private http: HttpClient, private cookies:CookieService) { }
+  constructor(private http: HttpClient, private cookies:CookieService, private router:Router) {}
   obtenerCiudades() {
     return this.http.get('http://localhost:3001/cinefilos/city');
   }
@@ -33,19 +35,36 @@ export class ApiService {
     return this.http.post('http://localhost:3001/cinefilos/login', user);
   }
 
+  isLoggedIn(): boolean {
+    const token = this.getToken();
+    return !!token; // Devolverá true si existe un token y false si no existe
+  }
+
   setToken(token: string) {
     this.cookies.set("token", token);
+    this.isLoggedIn$.next(true);
   }
 
   setClientData(clientData: object) {
     this.cookies.set("clientData", JSON.stringify(clientData));
+    this.clientData$.next(clientData);
   }
   getToken() {
     return this.cookies.get("token");
   }
 
-  getClientData() {
-    return this.cookies.get("clientData");
+  logout(): void {
+    this.cookies.delete('token');
+    this.cookies.delete('clientData');
+    this.router.navigateByUrl('/login');
+    this.isLoggedIn$.next(false); // Actualiza el estado de isLoggedIn$ a false al cerrar sesión
+    this.clientData$.next(null);
   }
+
+  getClientData() {
+    const clientDataString = this.cookies.get("clientData");
+    return clientDataString ? JSON.parse(clientDataString) : null;
+  }
+
 
 }
