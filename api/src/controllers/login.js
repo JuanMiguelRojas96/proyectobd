@@ -13,6 +13,7 @@ const login = async (req, res) => {
         if (getCLient.password !== password) {
             return res.status(200).json({ token: false});
         }
+        
         return res.status(200).json({ 
             token: true,
             clientData: {
