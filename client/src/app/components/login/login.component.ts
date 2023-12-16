@@ -17,7 +17,7 @@ export class LoginComponent {
   login(){
     const user = {email: this.email,password:this.password};
     this.apiService.login(user).subscribe(data=>{
-      this.apiService.setToken(data.clientData);
+      this.apiService.setToken(data);
       this.router.navigateByUrl('home');
       console.log(data);
     });
@@ -26,7 +26,8 @@ export class LoginComponent {
     };
   }
   obtenerToken(){
-    console.log(this.apiService.getToken());
+    const token = this.apiService.getToken();
+    console.log(token);
   }
 
 }
