@@ -19,6 +19,7 @@ import { MovieComponent } from './components/movie/movie.component';
 
 import { CookieService } from 'ngx-cookie-service';
 import { FormsModule } from '@angular/forms';
+import { ReservasComponent } from './components/reservas/reservas.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { FormsModule } from '@angular/forms';
     LoginComponent,
     RegisterComponent,
     MoviesComponent,
-    MovieComponent
+    MovieComponent,
+    ReservasComponent
   ],
   imports: [
     BrowserModule,

@@ -3,13 +3,12 @@ import { ActivatedRoute } from '@angular/router';
 import { ApiService } from '../../services/api.service';
 
 @Component({
-  selector: 'app-movie',
-  templateUrl: './movie.component.html',
-  styleUrls: ['./movie.component.css'] // Cambio 'styleUrl' a 'styleUrls'
+  selector: 'app-reservas',
+  templateUrl: './reservas.component.html',
+  styleUrl: './reservas.component.css'
 })
-export class MovieComponent implements OnInit {
-  isLoggedIn: boolean = false;
-  clientData:any;
+export class ReservasComponent implements OnInit {
+
   movie: any = {};
 
   constructor(private activatedRoute: ActivatedRoute, private apiService: ApiService) {}
@@ -21,12 +20,6 @@ export class MovieComponent implements OnInit {
         this.movie = movie;
       });
     });
-    this.apiService.isLoggedIn$.subscribe((loggedIn: boolean) => {
-      this.isLoggedIn = loggedIn;
-    });
-
-    this.apiService.clientData$.subscribe((data: any) => {
-      this.clientData = data;
-    });
   }
+
 }

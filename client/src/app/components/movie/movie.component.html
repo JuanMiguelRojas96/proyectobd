@@ -2,8 +2,14 @@
 <hr>
 <div class="row container animated fadeIn">
   <div class="col-md-4">
-    <img [src]="movie.image" [alt]="movie.name" title="{{movie.name}}" class="img-fluid w-100">
+    <img [src]="movie.image" [alt]="movie.name" title="{{movie.name}}" class="img-fluid w-100 ">
     <br>
+    <div *ngIf="isLoggedIn" class="text-center container-fluid p-3">
+      <a [routerLink]="['/reserva',movie.id]" class="btn btn-outline-success w-50">Reservar</a>
+    </div>
+    <div *ngIf="!isLoggedIn" class=" container-fluid alert alert-info m-auto w-50" role="alert">
+      Inicia Sesión para Reservar
+    </div>
     <div class="text-center container-fluid p-3">
       <a [routerLink]="['/movies']" class="btn btn-outline-danger w-50">Regresar</a>
     </div>
