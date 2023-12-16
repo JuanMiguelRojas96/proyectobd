@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ApiService } from '../../services/api.service';
 import { Router } from "@angular/router";
+import { Token } from '@angular/compiler';
 
 @Component({
   selector: 'app-login',
@@ -17,7 +18,8 @@ export class LoginComponent {
   login(){
     const user = {email: this.email,password:this.password};
     this.apiService.login(user).subscribe(data=>{
-      this.apiService.setToken(data);
+      this.apiService.setToken(data.token);
+      this.apiService.setClientData(data.clientData);
       this.router.navigateByUrl('home');
       console.log(data);
     });
@@ -25,9 +27,14 @@ export class LoginComponent {
       console.log(error);
     };
   }
-  obtenerToken(){
-    const token = this.apiService.getToken();
-    console.log(token);
+  obtenerToken() {
+    const tokenObject = this.apiService.getToken();
+    const clientDataObject = this.apiService.getClientData();
+    console.log(tokenObject);
+    console.log(clientDataObject);
+
   }
+
+
 
 }

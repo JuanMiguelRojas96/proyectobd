@@ -36,8 +36,16 @@ export class ApiService {
   setToken(token: string) {
     this.cookies.set("token", token);
   }
+
+  setClientData(clientData: object) {
+    this.cookies.set("clientData", JSON.stringify(clientData));
+  }
   getToken() {
     return this.cookies.get("token");
+  }
+
+  getClientData() {
+    return this.cookies.get("clientData");
   }
 
 }
