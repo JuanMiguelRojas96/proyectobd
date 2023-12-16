@@ -7,7 +7,7 @@
           Selecciona una Ciudad
         </button>
         <ul class="dropdown-menu dropdown-menu-light">
-          <li *ngFor="let ciudad of ciudades"><a class="dropdown-item"  (click)="seleccionarCiudad(ciudad.name)" [routerLink]="['/movies']">{{ciudad.name}}</a></li>
+          <li *ngFor="let ciudad of ciudades"><a class="dropdown-item"  (click)="seleccionarCiudad(ciudad.name); seleccionarIdCiudad(ciudad.id)" [routerLink]="['/movies']">{{ciudad.name}}</a></li>
         </ul>
       </div>
   </div>

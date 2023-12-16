@@ -14,6 +14,7 @@ export class CardCityComponent implements OnInit{
   constructor(private apiService: ApiService, private ciudadService:CiudadService) {}
 
   @Output() ciudadSeleccionada = new EventEmitter<string>();
+  @Output() idCiudadSeleccionada = new EventEmitter<string>();
 
   ngOnInit() {
     this.obtenerCiudades();
@@ -26,6 +27,11 @@ export class CardCityComponent implements OnInit{
 
   seleccionarCiudad(ciudadSeleccionada:string){
     this.ciudadService.setCity(ciudadSeleccionada);
+    console.log(ciudadSeleccionada);
+  }
+
+  seleccionarIdCiudad(ciudadSeleccionada:string){
+    this.ciudadService.setIdCity(ciudadSeleccionada);
     console.log(ciudadSeleccionada);
   }
 
