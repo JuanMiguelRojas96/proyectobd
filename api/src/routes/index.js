@@ -33,7 +33,7 @@ router.get('/cinefilos/client/:id?',getClient);
 router.post('/cinefilos/client',postClient);
 
 //ruta para login
-router.get('/cinefilos/login',login);
+router.post('/cinefilos/login',login);
 
 //ruta para añadir una pelicula
 router.post('/cinefilos/movie', postMovie);
