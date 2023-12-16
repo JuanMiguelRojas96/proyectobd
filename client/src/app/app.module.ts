@@ -16,6 +16,8 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { MoviesComponent } from './components/movies/movies.component';
 import { MovieComponent } from './components/movie/movie.component';
+
+import { CookieService } from 'ngx-cookie-service';
 import { FormsModule } from '@angular/forms';
 
 
@@ -37,7 +39,8 @@ import { FormsModule } from '@angular/forms';
     FormsModule
   ],
   providers: [
-    ApiService
+    ApiService,
+    CookieService
   ],
   bootstrap: [AppComponent]
 })

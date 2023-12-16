@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ApiService } from '../../services/api.service';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from "@angular/router";
+
 
 
 @Component({
@@ -17,13 +18,18 @@ export class RegisterComponent {
   passwordMisMatch = true;
   passwordMisLength = true;
 
-  constructor(private apiService:ApiService){}
+  constructor(private apiService:ApiService, private router:Router){}
 
   registeUser() {
     const user = {password:this.password, name: this.name, email: this.email, phone: this.phone};
     this.apiService.registrarCliente(user).subscribe(data =>{
+      this.apiService.setToken(data.token);
+      this.router.navigateByUrl('/home');
       console.log(data);
-    })
+    });
+    (error: any) => {
+      console.log(error);
+    };
   }
 
   onPasswordInput() {
@@ -31,7 +37,7 @@ export class RegisterComponent {
       this.passwordMisMatch = true;
     }else {
       this.passwordMisMatch = this.password !== this.passwordRepeat;
-    }  
+    }
   }
   onPasswordLength() {
     if (this.password.length < 8){
@@ -42,7 +48,7 @@ export class RegisterComponent {
   }
 
 
-  
+
 
 
 }

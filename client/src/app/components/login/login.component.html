@@ -10,9 +10,10 @@
     <!-- Login Form -->
     <form>
       <h5 class="text-center">INICIAR SESÓN</h5>
-      <input type="email" id="login" class="fadeIn second" name="login" placeholder="Correo Electrónico" required>
-      <input type="password" id="password" class="fadeIn third" name="login" placeholder="Contraseña" required>
-      <input type="submit" class="fadeIn fourth" value="Log In">
+      <input type="email" id="login" class="fadeIn second" name="login" placeholder="Correo Electrónico" [(ngModel)]="email" required>
+      <input type="password" id="password" class="fadeIn third" name="login" placeholder="Contraseña" [(ngModel)]="password" required>
+      <input type="submit" class="fadeIn fourth"  (click)="login()" value="Log In">
+      <input type="submit" class="fadeIn fourth"  (click)="obtenerToken()" value="Traer Token">
     </form>
 
     <!-- Remind Passowrd -->
