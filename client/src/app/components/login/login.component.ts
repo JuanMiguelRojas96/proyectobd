@@ -17,13 +17,16 @@ export class LoginComponent {
   login(){
     const user = {email: this.email,password:this.password};
     this.apiService.login(user).subscribe(data=>{
-      this.apiService.setToken(data.token);
+      this.apiService.setToken(data.clientData);
       this.router.navigateByUrl('home');
       console.log(data);
     });
     (error: any) => {
       console.log(error);
     };
+  }
+  obtenerToken(){
+    console.log(this.apiService.getToken());
   }
 
 }

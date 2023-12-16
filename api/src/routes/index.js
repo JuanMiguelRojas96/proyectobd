@@ -13,7 +13,6 @@ const getBranch = require('../controllers/getBranch');
 const login = require('../controllers/login');
 const postRoom = require('../controllers/postRoom');
 const getRoom = require('../controllers/getRoom');
-const bulkFunction = require('../controllers/bulkFunction');
 // Importar todos los routers;
 // Ejemplo: const authRouter = require('./auth.js');
 
@@ -59,8 +58,5 @@ router.post('/cinefilos/function', postFunction);
 
 //ruta para traer todos las funciones o una en particular
 router.get('/cinefilos/function/:id?', getFunction);
-
-//ruta para añadir varias funciones
-router.get('/cinefilos/bulkFunction', bulkFunction);
 
 module.exports = router;
