@@ -17,7 +17,21 @@
         </li>
       </ul>
     </div>
-    <a class="nav-link login" id="login" [routerLink]="['login']" routerLinkActive="active">
-      <img class="icon-login" src="../../../assets/login.png" alt="login"> INICIAR SESIÓN </a>
+    <!-- Elemento de inicio de sesión o dropdown -->
+    <div *ngIf="isLoggedIn; else loginElement">
+      <div class="dropdown">
+        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          HOLA, {{clientData.name | uppercase}} <!-- Aquí puedes mostrar el nombre del usuario si está disponible -->
+        </a>
+        <ul class="dropdown-menu dropdown-menu-light">
+          <li><a class="dropdown-item" (click)="logout()">Cerrar sesión</a></li>
+        </ul>
+      </div>
+    </div>
+    <ng-template #loginElement>
+      <a class="nav-link login" id="login" [routerLink]="['login']" routerLinkActive="active">
+        <img class="icon-login" src="../../../assets/login.png" alt="login"> INICIAR SESIÓN
+      </a>
+    </ng-template>
   </div>
 </nav>
