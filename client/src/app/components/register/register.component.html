@@ -1,0 +1,40 @@
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+
+    <!-- Icon -->
+    <div class="fadeIn first">
+      <img src="../../../assets/login.png" id="icon" alt="User Icon" />
+    </div>
+
+    <!-- Login Form -->
+    <form>
+      <h5 class="text-center">REGISTRO</h5>
+      <input type="email" id="email" class="fadeIn second" name="register" placeholder="Correo Electrónico" required [(ngModel)]="email">
+      <input type="text" id="nombre" class="fadeIn third" name="register" placeholder="Nombre" required [(ngModel)]="name">
+      <input type="text" id="telefono" class="fadeIn third" name="register" placeholder="Teléfono" required [(ngModel)]="phone">
+      <input type="password" id="password" class="fadeIn third" name="register" placeholder="Contraseña" required [(ngModel)]="password" (ngModelChange)="onPasswordLength()" >
+      <input type="password" id="password-repeat" class="fadeIn third" name="register" placeholder="Repite tu Contraseña" required [(ngModel)]="passwordRepeat" (ngModelChange)="onPasswordInput()">
+      <div *ngIf="passwordMisLength" class="alert alert-danger m-auto w-50" role="alert">
+        La contraseña es muy corta
+      </div>
+      <div *ngIf="passwordRepeat !== ''">
+      </div>
+      <div *ngIf="passwordRepeat !== ''">
+        <div *ngIf="passwordMisMatch" class="alert alert-danger m-auto w-50" role="alert">
+          Las contraseñas no coinciden
+        </div>
+        <div *ngIf="!passwordMisMatch" class="alert alert-success m-auto w-50" role="alert">
+          Las contraseñas coinciden
+        </div>
+      </div>
+      <input  type="submit" class="fadeIn fourth" value="Registrarme" (click)="registeUser()" [disabled]="passwordMisMatch">
+    </form>
+
+    <!-- Remind Passowrd -->
+    <div id="formFooter">
+      <a class="underlineHover" [routerLink]="['/login']">Ya tengo una cuenta</a>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,36 @@
+
+.footer {
+  background-color: #333;
+  position: absolute;
+  width: 101%;
+  z-index: 1;
+}
+.nav-link{
+  color: white;
+}
+.redes{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.redes img{
+  margin-left: 30px;
+  width: 30px;
+}
+.brand p{
+  color: #867F7F;
+  margin: 0px;
+}
+.navbar-brand{
+  font-weight: 700;
+  font-size: 40px;
+  justify-content: center;
+}
+
+.slogan{
+  font-family: 'Beth Ellen',sans-serif;
+}
+.gray{
+  color: #867F7F;
+}

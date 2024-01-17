@@ -1,0 +1,67 @@
+div{
+  position:relative;
+}
+.navbar{
+  background-image: linear-gradient(to right, #0BC829F0, #1F51B2ED);
+  font-family:'Poppins',sans-serif;
+  width: auto;
+  height: auto;
+
+}
+
+.navbar-brand{
+  font-weight: 700;
+  font-size: 25px;
+  text-align: center;
+  color: white;
+  word-wrap: break-word;
+  padding: 36px 100px 29px 35px ;
+}
+
+.nav-link{
+  font-weight: 700;
+  font-size: 15px;
+  color: white;
+  word-wrap: break-word;
+
+}
+
+.nav-link:hover{
+  color: yellow;
+}
+.active{
+  color:#0BC829F0;
+}
+.navbar-nav{
+  margin-left: auto;
+  height: 100%;
+}
+
+li{
+  margin-right: 50px;
+}
+
+#login{
+  position: absolute;
+  top:0;
+  right: 0;
+  transform: translate(-100%, 0%);
+}
+
+.icon-login{
+  width: 23px;
+}
+
+.login{
+  margin-top: 10px;
+}
+
+img{
+  width: 50px;
+  margin-bottom: 10px;
+}
+
+.dropdown-item:hover{
+  background-color:#1F51B2ED ;
+  color: white;
+}

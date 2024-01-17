@@ -1,0 +1,20 @@
+.card-city{
+  background-image: url('https://i.imgur.com/jRtWHlF.png');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+.btn{
+  background-color: white;
+}
+
+.card-bg{
+  background-color:#D9D9D9E5 ;
+}
+
+.dropdown-item:hover{
+  background-color:#1F51B2ED ;
+  color: white;
+}

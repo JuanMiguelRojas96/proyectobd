@@ -1,0 +1,16 @@
+<div class="card-city d-flex justify-content-center align-items-center animated fadeIn">
+  <div class="card-bg card text-center m-5">
+    <div class="card-body m-5">
+      <h5 class="card-title p-2">¿Dónde Estás?</h5>
+      <div class="dropdown">
+        <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Selecciona una Ciudad
+        </button>
+        <ul class="dropdown-menu dropdown-menu-light">
+          <li *ngFor="let ciudad of ciudades"><a class="dropdown-item"  (click)="seleccionarCiudad(ciudad.name); seleccionarIdCiudad(ciudad.id)" [routerLink]="['/movies']">{{ciudad.name}}</a></li>
+        </ul>
+      </div>
+  </div>
+</div>
+
+

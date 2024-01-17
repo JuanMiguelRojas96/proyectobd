@@ -1,0 +1,33 @@
+.carousel-item{
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.13), rgba(0,0,0,0.9));
+}
+.img-carousel{
+  margin: auto;
+  max-width: 25%;
+}
+
+/* Agrega animación para cards */
+.card {
+  opacity: 0; /* Inicialmente, la tarjeta estará invisible */
+  transform: translateY(30px); /* Se desplazará hacia arriba */
+  transition: opacity 0.5s ease, transform 0.5s ease; /* Transiciones suaves */
+
+  /* Agregar prefijo según sea necesario para mayor compatibilidad */
+  animation: fadeInUp 1s ease-in-out forwards; /* Animación personalizada */
+}
+
+/* Keyframes para la animación */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.selectedCity{
+  color: #0BC829F0;
+}
